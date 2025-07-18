@@ -1,0 +1,298 @@
+/* Importa a fonte 'Inter' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Variáveis de Cores para o Tema Minimalista */
+:root {
+    --bg-color: #f4f5f7;
+    --card-bg-color: #ffffff;
+    --header-bg-color: #1a237e; /* Cor baseada na sua logo */
+    --primary-text-color: #111827;
+    --secondary-text-color: #6b7280;
+    --accent-color: #4338ca;
+    --border-color: #e5e7eb;
+    --danger-color: #ef4444;
+}
+
+/* Reset Básico e Estilo do Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+/* Cabeçalho com a Logo */
+.app-header {
+    background-color: var(--header-bg-color);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Container Principal */
+.container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 40px;
+}
+
+.simulator-body {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Coluna de inputs um pouco maior */
+    gap: 40px;
+}
+
+/* Seção de Inputs e Configurações */
+.input-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* NOVO: Estilo para o botão que alterna a visibilidade */
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    background-color: transparent;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 32px;
+}
+
+.btn-secondary:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* NOVO: Estilo para a seção que será ocultada/mostrada */
+.collapsible-section {
+    margin-bottom: 32px;
+}
+
+.commission-config {
+    background-color: #f9f9fc;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 0; /* A margem inferior foi movida para o wrapper '.collapsible-section' */
+}
+
+.commission-tier {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tier-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.tier-inputs span {
+    color: var(--secondary-text-color);
+    font-size: 0.875rem;
+}
+
+.tier-inputs input {
+    width: 70px; /* Largura fixa para os inputs da faixa */
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+}
+
+.add-tier-btn, .remove-tier-btn {
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-tier-btn {
+    width: 100%;
+    background-color: #e0e7ff;
+    color: var(--accent-color);
+    padding: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.add-tier-btn:hover {
+    background-color: #c7d2fe;
+}
+
+.remove-tier-btn {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    line-height: 30px;
+}
+.remove-tier-btn:hover {
+    background-color: #fecaca;
+}
+
+.simulation-inputs {
+    background-color: var(--card-bg-color);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+.input-group:last-child {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--primary-text-color);
+}
+
+/* Seção de Resultados */
+.results-section {
+    min-width: 0;
+}
+
+.final-result-card {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.final-result-card span {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.final-result-card strong {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.table-container {
+    overflow-x: auto;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+
+thead th {
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    text-align: center;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:last-child, td:last-child {
+    text-align: right;
+}
+
+td.perda {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+td strong {
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+
+/* Design Responsivo */
+@media (max-width: 900px) {
+    .simulator-body {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
